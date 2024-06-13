@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WineController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/wines', function (){
-    return view('wines');
-})->name('wines');
+Route::get('/wines',[WineController::class, 'index'])->name('wines');
