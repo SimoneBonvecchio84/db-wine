@@ -13,6 +13,9 @@ class WinesTableSeeder extends Seeder
     public function run(): void
     {
         $response = Http::get('https://api.sampleapis.com/wines/reds');
-        dd($response);
+        $data = $response->json();
+
+        
+
     }
 }
