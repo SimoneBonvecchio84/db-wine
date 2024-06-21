@@ -3,6 +3,8 @@
 @section('content')
     <div class="container py-3">
 
+        
+
         <form action="{{ route('wines.store') }}" method="POST">
             @csrf
             <div class="mb-3">

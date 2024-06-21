@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::resource('/wines', WineController::class)->parameters('slug');
+Route::resource('/wines', WineController::class)->parameters(['wines'=>'wine:slug']);

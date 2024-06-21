@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\Wine;
 
 class WineController extends Controller
@@ -14,7 +15,7 @@ class WineController extends Controller
     public function index()
     {
         $wines = Wine::all();
-        dd($wines);
+       
             return view ("admin.index", compact("wines"));
     }
 
@@ -34,8 +35,9 @@ class WineController extends Controller
         $data = $request->all();
         $newWine = new Wine();
         $newWine->fill($data);
+        $newWine->slug = Str::slug($request->wine);
         $newWine->save();
-        return redirect()->route('admin.show', $newWine->slug);
+        return redirect()->route('wines.show', $newWine->slug);
     }
 
     /**
