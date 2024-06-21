@@ -30,6 +30,9 @@
                 <td>
                     <a class="btn btn-primary" href="{{ route('wines.show', $curWine->slug) }}">Dettagli</a>
                 </td>
+                <td>
+                    <a class="btn btn-warning" href="{{ route('wines.edit', $curWine->slug) }}">Modifica</a>
+                </td>
                 
             </tr>                
             @endforeach
