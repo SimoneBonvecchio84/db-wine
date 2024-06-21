@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\WineController;
+use App\Http\Controllers\Admin\WineController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/wines',[WineController::class, 'index'])->name('wines');
+Route::resource('/wines', WineController::class)->parameters('slug');

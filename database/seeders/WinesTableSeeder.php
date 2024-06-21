@@ -5,6 +5,7 @@ use App\Models\Wine;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 class WinesTableSeeder extends Seeder
 {
     /**
@@ -14,13 +15,14 @@ class WinesTableSeeder extends Seeder
     {
         $response = Http::withOptions(['verify' => false])->get('https://api.sampleapis.com/wines/reds');
         $items = $response->json();
-        foreach ($items as $data) {
+        foreach ($items as $i => $data) {
             $newWine = new Wine();
             $newWine->winery   = $data["winery"];
             $newWine->wine     = $data["wine"];
             $newWine->rating   = $data["rating"]['average'];
             $newWine->location = $data["location"];
             $newWine->image    = $data["image"];
+            $newWine->slug     = Str::slug($newWine->wine) . '-' . $i;
             $newWine->save();
         }
         
