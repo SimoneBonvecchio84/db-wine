@@ -10,13 +10,13 @@ class Wine extends Model
     use HasFactory;
 
     protected $fillable = [
-         
-         "winery",
-         "wine",
-         "rating",
-         "location",
-         "image",
-         "slug"
+
+        "winery",
+        "wine",
+        "rating",
+        "location",
+        "image",
+        "slug"
 
     ];
 }

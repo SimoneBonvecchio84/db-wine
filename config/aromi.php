@@ -1,6 +1,5 @@
 <?php
-return [
-  $aromi = [
+return  [
     "ciliegia",
     "fragola",
     "lampone",
@@ -47,6 +46,4 @@ return [
     "catrame",
     "miele",
     "nocciola"
-  ]
-
-];
+  ];
