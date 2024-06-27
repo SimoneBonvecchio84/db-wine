@@ -33,6 +33,14 @@
                 <td>
                     <a class="btn btn-warning" href="{{ route('wines.edit', $curWine->slug) }}">Modifica</a>
                 </td>
+                <td>
+                    <form action="{{ route('wines.destroy', $curWine->slug) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" href="">Cancella</button>
+                    </form>
+                </td>
+
                 
             </tr>                
             @endforeach
