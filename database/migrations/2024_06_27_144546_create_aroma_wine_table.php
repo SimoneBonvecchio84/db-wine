@@ -16,7 +16,7 @@ return new class extends Migration
         $table->foreign("aroma_id")->references("id")->on("wines")->cascadeOnDelete();
 
         $table->unsignedBigInteger("wine_id");
-        $table->foreign("wine_id")->references("id")->on("aroma")->cascadeOnDelete();
+        $table->foreign("wine_id")->references("id")->on("aromas")->cascadeOnDelete();
 
         $table->primary(["aroma_id", "wine_id"]);
         });

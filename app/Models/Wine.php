@@ -19,4 +19,8 @@ class Wine extends Model
         "slug"
 
     ];
+
+    public function aromas(){
+        return $this->belongsToMany(Aroma::class);
+    }
 }
