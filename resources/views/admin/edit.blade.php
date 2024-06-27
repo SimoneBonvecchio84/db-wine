@@ -14,7 +14,7 @@
                 value="{{$wine->winery}}">
             </div> 
             <div class="mb-3">
-                <label for="wine" class="form-label">Vino</label>
+                <label for="wine" class="form-label">Vinoooo</label>
                 <input type="text" class="form-control" id="wine" name="wine" value="{{$wine->wine}}">
             </div>
             
