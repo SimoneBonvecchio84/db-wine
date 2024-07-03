@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Aroma extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['aromi'];
 }

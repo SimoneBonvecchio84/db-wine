@@ -16,7 +16,7 @@ class AromasTableSeeder extends Seeder
         $arrayAromas = config('aromi');
 
         foreach($arrayAromas as $curAroma) {
-            Aroma::create($curAroma);
+            Aroma::create(['aromi' => $curAroma]);
         }
     }
 }
